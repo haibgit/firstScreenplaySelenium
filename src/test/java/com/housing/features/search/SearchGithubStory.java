@@ -2,6 +2,7 @@ package com.housing.features.search;
 
 import com.housing.tasks.OpenGitHub;
 import com.housing.tasks.Search;
+import com.housing.tasks.SearchGithub;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
@@ -18,7 +19,7 @@ import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static org.hamcrest.Matchers.containsString;
 
 @RunWith(SerenityRunner.class)
-public class SearchGithub {
+public class SearchGithubStory {
 
     Actor hainv = Actor.named("Hainv");
 
@@ -37,10 +38,8 @@ public class SearchGithub {
     public void search_results_should_show_the_search_term_in_the_title() {
 
         givenThat(hainv).wasAbleTo(openGitHub);
-
-//        when(hainv).attemptsTo(Search.forTheTerm("BDD In Action"));
-//
-//        then(hainv).should(eventually(seeThat(TheWebPage.title(), containsString("BDD In Action"))));
+        when(hainv).attemptsTo(SearchGithub.forKeyword("haibgit"));
+        then(hainv).should(eventually(seeThat(TheWebPage.title(), containsString("haibgit"))));
 
     }
 }

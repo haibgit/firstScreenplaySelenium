@@ -16,8 +16,5 @@ public class OpenGitHub implements Task {
         actor.attemptsTo(Open.browserOn().the(githubPage));
     }
 
-    @Override
-    public Performable then(Performable nextPerformable) {
-        return null;
-    }
+
 }
