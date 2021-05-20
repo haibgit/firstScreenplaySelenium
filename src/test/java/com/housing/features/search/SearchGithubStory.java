@@ -24,6 +24,7 @@ public class SearchGithubStory {
 
     @Test
     public void test_first_demo() {
-
+        hainv.wasAbleTo(Open.);
+        hainv.attemptsTo("search keywork");
     }
 }
