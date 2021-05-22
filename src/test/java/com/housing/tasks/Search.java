@@ -1,17 +1,15 @@
 package com.housing.tasks;
 
-import com.housing.ui.SearchBox;
+import com.housing.ui.HomePages;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.EnterValue;
-import net.serenitybdd.screenplay.actions.EnterValueIntoTarget;
 import org.openqa.selenium.Keys;
 
 public class Search implements Task {
-    private String value;
+    private final String value;
 
     /*
     đoạn này khởi tạo contructor để khởi tạo dc value , lấy value đó truyền vào chỗ performAs
@@ -30,7 +28,7 @@ public class Search implements Task {
         actor.wasAbleTo(
                 Enter.
                         theValue(value)
-                        .into(SearchBox.TXT_SEARCH)
+                        .into(HomePages.TXT_SEARCH)
                         .thenHit(Keys.ENTER)
         );
     }
