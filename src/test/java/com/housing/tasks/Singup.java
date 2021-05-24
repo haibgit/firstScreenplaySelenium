@@ -22,9 +22,11 @@ public class Singup implements Task {
     @Override
     public <T extends Actor> void performAs(T t) {
         t.wasAbleTo(
-                Enter.theValue(email).into(HomePages.TXT_EMAILS).then(
-                        Click.on(HomePages.BTN_SINGUP)
-                )
+                Enter.theValue(email).into(HomePages.TXT_EMAILS).
+                        then(
+                                Click.
+                                        on(HomePages.BTN_SINGUP)
+                        )
         );
     }
 }
