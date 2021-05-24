@@ -4,6 +4,7 @@ import com.housing.question.TheEmail_Lambda;
 import com.housing.question.TheEmail_PageObject;
 import com.housing.tasks.LaunchWebTest;
 import com.housing.tasks.Singup;
+import com.housing.tasks.SingupEnsure;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
@@ -75,11 +76,20 @@ public class SearchGithubStory {
         hainv.attemptsTo(launchWebTest);
         hainv.wasAbleTo(Singup.withEmail("hainv@gmail.com"));
         hainv.should(seeThat(TheEmail_PageObject.value(), equalTo("hainv@gmail.com")));
-    } @Test
+    }
+
+    @Test
     public void verify_with_question_using_lambda8() {
         hainv.attemptsTo(launchWebTest);
         hainv.wasAbleTo(Singup.withEmail("hainv@gmail.com"));
         hainv.should(seeThat(TheEmail_Lambda.value(), equalTo("hainv@gmail.com")));
     }
 
+    @Test
+    public void verify_using_ensure () {
+        hainv.attemptsTo(launchWebTest);
+        hainv.wasAbleTo(SingupEnsure.withEmail("hainv@gmail.com"));
+
+        
+    }
 }
