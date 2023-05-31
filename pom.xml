@@ -8,11 +8,11 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Serenity project with JUnit and WebDriver</name>
+    <name>Demo ScreenPlay with Junit 5</name>
 
     <properties>
-        <serenity.version>3.5.1</serenity.version>
-        <junit5.version>5.8.2</junit5.version>
+        <serenity.version>3.7.1</serenity.version>
+        <junit5.version>5.9.3</junit5.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <encoding>UTF-8</encoding>
         <tags></tags>

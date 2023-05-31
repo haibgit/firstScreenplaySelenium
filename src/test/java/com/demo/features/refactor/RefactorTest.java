@@ -3,6 +3,7 @@ package com.demo.features.refactor;
 import com.demo.Ability.Navigate;
 import com.demo.tasks.Login;
 import com.demo.ui.HomePage;
+import com.typesafe.config.ConfigFactory;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.annotations.CastMember;
@@ -23,8 +24,10 @@ public class RefactorTest {
         actor.attemptsTo(
 
                 Navigate.toTheHomePage(),
-                Login.withAccountRefactor("mngr480372", "pUtunum"),
+//                Login.withAccountRefactor("mngr480372", "pUtunum"),
+                Login.withAccountRefactor(Account.DEFAULT),
                 Ensure.that(Text.of(HomePage.HEADING)).contains("Welcome To Manager's Page of Guru99 Bank"));
     }
+
 
 }

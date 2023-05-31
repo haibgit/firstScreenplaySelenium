@@ -1,5 +1,6 @@
 package com.demo.tasks;
 
+import com.demo.features.refactor.Account;
 import com.demo.ui.LoginPage;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -19,12 +20,12 @@ public class Login {
 
     }
 
-    public static Performable withAccountRefactor(String userName, String password) {
+    public static Performable withAccountRefactor(Account account) {
 
         return Task.where(
                 "{0} login with account",
-                Enter.theValue(userName).into(LoginPage.USERNAME),
-                Enter.theValue(password).into(LoginPage.PASSWORD),
+                Enter.theValue(account.getName()).into(LoginPage.USERNAME),
+                Enter.theValue(account.getPassword()).into(LoginPage.PASSWORD),
                 Click.on(LoginPage.BUTTON_LOGIN)
 
         );
